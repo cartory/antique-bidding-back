@@ -1,0 +1,1 @@
+const Bot = require('../models/Bot')const User = require('../models/User')const Role = require('../models/Role')const Antique = require('../models/Antique')const User_Antique = require('../models/User_Antique')module.exports = {	Bot,	User,	Role,	Antique,	User_Antique,}
