@@ -1,0 +1,13 @@
+# DIRS
+dist/
+
+seeders/
+node_modules/
+
+# FILES
+db.json
+project.xml
+
+.env
+api.routes
+database.json

@@ -1,0 +1,13 @@
+# DIRS
+
+dist/
+assets/
+seeders/
+node_modules/
+
+#FILES
+.gitignore
+README.md
+webpack.config.js
+package-lock.json
+.env.sample
