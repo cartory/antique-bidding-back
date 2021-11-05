@@ -14,6 +14,11 @@ Category.init({	id: {
 		key: 'name',
 		type: DataTypes.STRING(50),
 		unique: true,
+	},
+	description: {
+		key: 'description',
+		type: DataTypes.STRING(255),
+		allowNull: true,
 	}
 }, { 	sequelize, 	tableName: 'Category',	paranoid: true,	timestamps: true,})
 
