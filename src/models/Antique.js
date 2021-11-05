@@ -34,6 +34,14 @@ Antique.init({	id: {
 	endDate: {
 		key: 'endDate',
 		type: DataTypes.TIME,
+	},
+	Categoryid: {
+		key: 'Categoryid',
+		type: DataTypes.INTEGER(10),
+		references: {
+			key: 'id',
+			model: 'Category'
+		},
 	}
 }, { 	sequelize, 	tableName: 'Antique',	paranoid: true,	timestamps: true,})
 

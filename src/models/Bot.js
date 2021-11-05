@@ -13,6 +13,14 @@ Bot.init({	id: {
 	maximumBidAmount: {
 		key: 'maximumBidAmount',
 		type: DataTypes.INTEGER(10),
+	},
+	Userid: {
+		key: 'Userid',
+		type: DataTypes.INTEGER(10),
+		references: {
+			key: 'id',
+			model: 'User'
+		},
 	}
 }, { 	sequelize, 	tableName: 'Bot',	paranoid: true,	timestamps: true,})
 
