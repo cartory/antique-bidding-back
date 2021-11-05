@@ -14,8 +14,8 @@ Bot.belongsTo(User, { foreignKey: 'Userid', as: 'user' })
 Category.hasMany(Antique, { foreignKey: 'Categoryid', as: 'antiques' })
 Antique.belongsTo(Category, { foreignKey: 'Categoryid', as: 'category' })
 
-User.belongsToMany(Antique, { foreignKey: 'Userid', as: 'users' })
-Antique.belongsToMany(User, { foreignKey: 'Antiqueid', as: 'antiques' })
+User.belongsToMany(Antique, { through: User_Antique, foreignKey: 'Userid', as: 'users' })
+Antique.belongsToMany(User, { through: User_Antique, foreignKey: 'Antiqueid', as: 'antiques' })
 
 module.exports = {
 	Bot,
