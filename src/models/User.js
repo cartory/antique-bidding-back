@@ -23,14 +23,6 @@ User.init({	id: {
 		key: 'photoUrl',
 		type: DataTypes.STRING(255),
 	},
-	Botid: {
-		key: 'Botid',
-		type: DataTypes.INTEGER(10),
-		references: {
-			key: 'id',
-			model: 'Bot'
-		},
-	},
 	Roleid: {
 		key: 'Roleid',
 		type: DataTypes.INTEGER(10),

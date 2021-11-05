@@ -13,6 +13,7 @@ Role.init({	id: {
 	name: {
 		key: 'name',
 		type: DataTypes.STRING(20),
+		unique: true,
 	}
 }, { 	sequelize, 	tableName: 'Role',	paranoid: true,	timestamps: true,})
 
