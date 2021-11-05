@@ -2,15 +2,15 @@ const cors = require('cors')
 const express = require('express')
 
 const routes = require('./api.routes')
-const sequelizeInstance = require('./utils/sequelize')
+const sequelize = require('./utils/sequelize')
 
 const app = express()
 
 // DB CONNECTION
-sequelizeInstance
+sequelize
 	.authenticate()
 	.then(async () => {
-		// await sequelizeInstance.sync({ logging: true, alter: true })
+		// await sequelize.sync({ alter: true})
 		console.log(`\x1b[32mDB Connected Sucessfully!\x1b[0m`)
 	})
 	.catch(err => console.error(err))
