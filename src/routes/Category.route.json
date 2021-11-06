@@ -1,1 +1,1 @@
-{"route":"categorys","operations":["read","show","create","update","delete"]}
+{"route":"categories","operations":["read","show","create","update","delete"]}
