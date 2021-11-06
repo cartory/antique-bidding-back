@@ -3,7 +3,8 @@ const sequelize = require('../utils/sequelize')
 
 class Antique extends Model { }
 
-Antique.init({	id: {
+Antique.init({
+	id: {
 		key: 'id',
 		type: DataTypes.INTEGER(10),
 		primaryKey: true,
@@ -26,11 +27,6 @@ Antique.init({	id: {
 		key: 'photoUrl',
 		type: DataTypes.STRING(255),
 	},
-	photoId: {
-		key: 'photoId',
-		type: DataTypes.STRING(100),
-		unique: true,
-	},
 	endDate: {
 		key: 'endDate',
 		type: DataTypes.TIME,
@@ -43,6 +39,11 @@ Antique.init({	id: {
 			model: 'Category'
 		},
 	}
-}, { 	sequelize, 	tableName: 'Antique',	paranoid: true,	timestamps: true,})
+}, {
+	sequelize,
+	tableName: 'Antique',
+	paranoid: true,
+	timestamps: true,
+})
 
 module.exports = Antique
