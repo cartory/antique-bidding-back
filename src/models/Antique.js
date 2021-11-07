@@ -17,7 +17,7 @@ Antique.init({
 	},
 	description: {
 		key: 'description',
-		type: DataTypes.STRING(255),
+		type: DataTypes.TEXT,
 	},
 	startPrice: {
 		key: 'startPrice',
