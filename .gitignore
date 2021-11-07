@@ -1,7 +1,6 @@
 # DIRS
 dist/
 
-seeders/
 node_modules/
 
 # FILES
