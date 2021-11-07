@@ -1,0 +1,62 @@
+{
+	"roles": [
+		"user",
+		"admin"
+	],
+	"categories": [
+		"rare",
+		"common",
+		"epic",
+		"legendary"
+	],
+	"antiques": [
+		[
+			"typewriter",
+			"A typewriter is a mechanical or electromechanical machine for typing characters. Typically, a typewriter has an array of keys, and each one causes a different single character to be produced on paper by striking an inked ribbon selectively against the paper with a type element. At the end of the nineteenth century, the term 'typewriter' was also applied to a person who used such a device.",
+			"https://www.lego.com/cdn/cs/set/assets/blt505d24ad41366851/21327.jpg?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1",
+			90.1
+		],
+		[
+			"Gramophone",
+			"A gramophone, like a cassette player, CD player, or MP3 player, is a device for playing music. A gramophone plays records: discs with grooves that are amplified by a needle. It's a relic today, but at one time this turntable device was the chief means by which recorded music made its way to the ears of home listeners.",
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Early_phonograph%2C_Deaf_Smith_County_Museum%2C_Hereford%2C_TX_IMG_4857.JPG/675px-Early_phonograph%2C_Deaf_Smith_County_Museum%2C_Hereford%2C_TX_IMG_4857.JPG",
+			141.29
+		],
+		[
+			"Old Phone Red",
+			"Vintage red rotary phone, Old phone, Dial phone, Stylish phone, Soviet desk phone, Rotary phone, Soviet phone, Retro phone, Cool home phone UssrMemorabiliaStore 5 out of 5 stars (135) $ 65.00. Add to Favorites Red Trimline Rotary Dial Telephone Western Electric AD 2 9-76 NOT WORKING Parts Only Stage Prop 1970's",
+			"https://thumbs.dreamstime.com/b/old-phone-red-color-whit-cable-old-red-telephone-used-s-wired-connection-173153364.jpg",
+			20.5
+		],
+		[
+			"Old bicycle",
+			"A bicycle, also called a bike or cycle, is a human-powered or motor-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist.",
+			"https://i.pinimg.com/564x/17/7e/b0/177eb05631a1cde95e1af81d45e85230.jpg",
+			10
+		],
+		[
+			"Sewing machine",
+			"A sewing machine is a machine used to sew fabric and materials together with thread. Sewing machines were invented during the first Industrial Revolution to decrease the amount of manual sewing work performed in clothing companies. Since the invention of the first sewing machine, generally considered to have been the work of Englishman Thomas Saint in 1790,[1] the sewing machine has greatly improved the efficiency and productivity of the clothing industry.",
+			"https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/W%26w8d.jpg/1024px-W%26w8d.jpg",
+			31.1
+		],
+		[
+			"Soberano Brandy Bottled",
+			"Brandy is a liquor produced by distilling wine. Brandy generally contains 35–60% alcohol by volume (70–120 US proof) and is typically consumed as an after-dinner digestif. Some brandies are aged in wooden casks. Others are coloured with caramel colouring to imitate the effect of aging, and some are produced using a combination of both aging and colouring. Varieties of wine brandy can be found across the winemaking world. Among the most renowned are Cognac and Armagnac from southwestern France.",
+			"https://www.whiskyantique.com/media/prodotti/soberano-brandy-bottled-in-the-60-s-70-s-300cl-40-magnum-68173/conversions/thumb.jpg",
+			200
+		],
+		[
+			"Fender Vintera 70s Stratocaster MN",
+			"The Fender Stratocaster, colloquially known as the Strat, is a model of electric guitar designed from 1952 into 1954 by Leo Fender, Bill Carson, George Fullerton and Freddie Tavares. The Fender Musical Instruments Corporation has continuously manufactured the Stratocaster from 1954 to the present. It is a double-cutaway guitar, with an extended top \"horn\" shape for balance. Along with the Gibson Les Paul, Gibson SG and Fender Telecaster, it is one of the most-often emulated electric guitar shapes.",
+			"https://d1aeri3ty3izns.cloudfront.net/media/48/489464/1200/preview.jpg",
+			890
+		],
+		[
+			"Polaroid 600 Land Camera (640)",
+			"This was the first camera designed for Polaroid's 600-series integral film. It was notably short on features, with no close-up lens or built-in flash. It does, however, have the typical slider for darken/lighten exposure correction. ",
+			"https://m.media-amazon.com/images/I/9111rJIhDoL._AC_SS450_.jpg",
+			65
+		]
+	]
+}
