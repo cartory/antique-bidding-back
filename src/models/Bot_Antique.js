@@ -4,10 +4,16 @@ const sequelize = require('../utils/sequelize')
 class Bot_Antique extends Model { }
 
 Bot_Antique.init({
+	id: {
+		key: 'id',
+		type: DataTypes.INTEGER(10),
+		primaryKey: true,
+		autoIncrement: true,
+		autoIncrementIdentity: true,
+	},
 	Botid: {
 		key: 'Botid',
 		type: DataTypes.INTEGER(10),
-		primaryKey: true,
 		references: {
 			key: 'id',
 			model: 'Bot'
@@ -16,7 +22,6 @@ Bot_Antique.init({
 	Antiqueid: {
 		key: 'Antiqueid',
 		type: DataTypes.INTEGER(10),
-		primaryKey: true,
 		references: {
 			key: 'id',
 			model: 'Antique'

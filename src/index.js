@@ -16,13 +16,21 @@ io.on('connection', (socket) => {
 		socket.broadcast.emit('lastBid', antiqueResult)
 	})
 
-	socket.on('bid', ({ Antiqueid, price, Userid, endDate }) => {
+	socket.on('bid', ({ Antiqueid, price, Userid, endDate, maximumBidAmount }) => {
 		if (Date.now() < endDate) {
-			setTimeout(async () => {
-				console.log({ Antiqueid, price, Userid, endDate })
-				const antiqueResult = await antique.makeBid({ Userid, Antiqueid, price })
-				socket.broadcast.emit('lastBid', antiqueResult)
-			}, delayInMilliseconds)
+			if (maximumBidAmount) {
+				if (price < maximumBidAmount) {
+					setTimeout(async () => {
+						const antiqueResult = await antique.makeBid({ Userid, Antiqueid, price })
+						socket.broadcast.emit('lastBid', antiqueResult)
+					}, delayInMilliseconds)
+				}
+			} else {
+				setTimeout(async () => {
+					const antiqueResult = await antique.makeBid({ Userid, Antiqueid, price })
+					socket.broadcast.emit('lastBid', antiqueResult)
+				}, delayInMilliseconds)
+			}
 		}
 	})
 })

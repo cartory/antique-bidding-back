@@ -5,7 +5,7 @@ require('dotenv').config()
 module.exports = new Sequelize(
 	process.env.DATABASE_URL,
 	{
-		// logging: false,
+		logging: false,
 		define: {
 			paranoid: true,
 			defaultScope: {

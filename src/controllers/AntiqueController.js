@@ -14,6 +14,7 @@ class AntiqueController extends Controller {
 				attributes: { exclude: ['Categoryid'] },
 				where: { id: antiqueId },
 				include: [
+					'bots',
 					'category',
 					{
 						association: 'users',
