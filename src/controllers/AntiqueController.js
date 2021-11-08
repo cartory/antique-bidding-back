@@ -64,8 +64,7 @@ class AntiqueController extends Controller {
 					Userid, Antiqueid, lastBid: price
 				})
 			}
-
-			console.log(lastBidResponse.toJSON())
+			
 			return this.get(Antiqueid)
 		} catch (err) {
 			console.error(err)
