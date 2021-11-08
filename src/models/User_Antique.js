@@ -3,10 +3,16 @@ const sequelize = require('../utils/sequelize')
 
 class User_Antique extends Model { }
 
-User_Antique.init({	Userid: {
-		key: 'Userid',
+User_Antique.init({	id: {
+		key: 'id',
 		type: DataTypes.INTEGER(10),
 		primaryKey: true,
+		autoIncrement: true,
+		autoIncrementIdentity: true,
+	},
+	Userid: {
+		key: 'Userid',
+		type: DataTypes.INTEGER(10),
 		references: {
 			key: 'id',
 			model: 'User'
@@ -15,7 +21,6 @@ User_Antique.init({	Userid: {
 	Antiqueid: {
 		key: 'Antiqueid',
 		type: DataTypes.INTEGER(10),
-		primaryKey: true,
 		references: {
 			key: 'id',
 			model: 'Antique'
@@ -24,7 +29,6 @@ User_Antique.init({	Userid: {
 	lastBid: {
 		key: 'lastBid',
 		type: DataTypes.FLOAT(10),
-		allowNull: true,
 	}
 }, { 	sequelize, 	tableName: 'User_Antique',	paranoid: false,	timestamps: false,})
 

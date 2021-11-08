@@ -8,13 +8,22 @@ const server = http.createServer(app)
 const io = new socket.Server(server)
 
 const delayInMilliseconds = 500
+const antique = require('./controllers/AntiqueController')
 
 io.on('connection', (socket) => {
-	socket.on('bid', (data) => {
-		console.log(data);
-		setTimeout(() => {
-			socket.broadcast.emit('bid', { lastBid: Date.now() })
-		}, delayInMilliseconds);
+	socket.on('lastBids', async ({ antiqueId }) => {
+		const antiqueResult = await antique.get(antiqueId)
+		socket.broadcast.emit('lastBid', antiqueResult)
+	})
+
+	socket.on('bid', ({ Antiqueid, price, Userid, endDate }) => {
+		if (Date.now() < endDate) {
+			setTimeout(async () => {
+				console.log({ Antiqueid, price, Userid, endDate })
+				const antiqueResult = await antique.makeBid({ Userid, Antiqueid, price })
+				socket.broadcast.emit('lastBid', antiqueResult)
+			}, delayInMilliseconds)
+		}
 	})
 })
 

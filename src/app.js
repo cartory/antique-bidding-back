@@ -10,7 +10,7 @@ const app = express()
 sequelize
 	.authenticate()
 	.then(async () => {
-		// await sequelize.sync({ alter: true})
+		// await sequelize.sync({ alter: true })
 		console.log(`\x1b[32mDB Connected Sucessfully!\x1b[0m`)
 	})
 	.catch(err => console.error(err))
