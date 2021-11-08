@@ -7,6 +7,8 @@ User_Antique.init({	id: {
 		key: 'id',
 		type: DataTypes.INTEGER(10),
 		primaryKey: true,
+		autoIncrement: true,
+		autoIncrementIdentity: true,
 	},
 	Userid: {
 		key: 'Userid',
