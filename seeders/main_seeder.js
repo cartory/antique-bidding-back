@@ -17,28 +17,28 @@ sequelize
 		// await sequelize.dropAllSchemas({ logging: true })
 		// await sequelize.sync({ force: true })
 		try {
-			await Role.bulkCreate(roles.map(name => ({ name })))
-			await Category.bulkCreate(categories.map(name => ({ name })))
+			// await Role.bulkCreate(roles.map(name => ({ name })))
+			// await Category.bulkCreate(categories.map(name => ({ name })))
 
-			// const catIds = (await Category.findAll()).map(cat => cat.getDataValue('id'))
+			const catIds = (await Category.findAll()).map(cat => cat.getDataValue('id'))
 
-			// let antiqueData = antiques.map(antique => {
-			// 	const [name, description, photoUrl, startPrice] = antique
+			let antiqueData = antiques.map(antique => {
+				const [name, description, photoUrl, startPrice] = antique
 
-			// 	const endDate = new Date()
-			// 	endDate.setDate(endDate.getDate() + faker.datatype.number({ min: 1, max: 7 }))
+				const endDate = new Date()
+				endDate.setDate(endDate.getDate() + faker.datatype.number({ min: 1, max: 7 }))
 
-			// 	return {
-			// 		name,
-			// 		photoUrl,
-			// 		description,
-			// 		startPrice,
-			// 		endDate: endDate,
-			// 		Categoryid: catIds[Math.floor(Math.random() * catIds.length)],
-			// 	}
-			// })
+				return {
+					name,
+					photoUrl,
+					description,
+					startPrice,
+					endDate: endDate,
+					Categoryid: catIds[Math.floor(Math.random() * catIds.length)],
+				}
+			})
 
-			// await Antique.bulkCreate(antiqueData)
+			await Antique.bulkCreate(antiqueData)
 		} catch (err) {
 			console.error(err);
 		}
