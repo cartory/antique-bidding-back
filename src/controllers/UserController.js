@@ -7,6 +7,23 @@ class UserController extends Controller {
 		super(User)
 	}
 
+	find = async ({ params }, res) => {
+		const { id } = params
+		try {
+			const user = await User.findOne({
+				where: { id },
+				attributes: { exclude: ['Roleid'] },
+				include: ['bot', 'role'],
+			})
+
+			return res.status(200).json(user)
+		} catch (err) {
+			console.error(err)
+		}
+
+		return res.status(500).json(this.defaultErrorMessage)
+	}
+
 	all = async (_, res) => {
 		try {
 			const users = await User.findAll({
