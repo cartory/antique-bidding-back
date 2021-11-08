@@ -8,25 +8,44 @@ class AntiqueController extends Controller {
 		super(Antique)
 	}
 
-	get = async (Antiqueid) => {
+	get = async (antiqueId) => {
 		try {
-			const antiqueResult = await User_Antique.findOne({
-				where: { Antiqueid },
-				attributes: {
-					exclude: ['Categoryid']
-				},
+			let antique = await Antique.findOne({
+				attributes: { exclude: ['Categoryid'] },
+				where: { id: antiqueId },
 				include: [
 					'category',
-					'antiques',
+					{
+						association: 'users',
+						attributes: {
+							exclude: ['Roleid', 'createdAt', 'deletedAt', 'updatedAt']
+						},
+					},
 				],
 			})
 
-			return antiqueResult.toJSON()
+			const users = antique.getDataValue('users')
+
+			antique = antique.toJSON()
+			delete antique['users']
+
+			if (!users.length) {
+				return { ...antique, user: null }
+			}
+
+			const majorBidUser = users.reduce((userA, userB) => {
+				const a = userA['User_Antique']['lastBid']
+				const b = userB['User_Antique']['lastBid']
+
+				return a > b ? userA : userB
+			})
+
+			return { ...antique, user: majorBidUser }
 		} catch (err) {
 			console.error(err);
 		}
 
-		return null
+		return this.defaultErrorMessage
 	}
 
 	makeBid = async ({ Userid, Antiqueid, price }) => {
@@ -51,6 +70,17 @@ class AntiqueController extends Controller {
 			console.error(err)
 		}
 
+	}
+
+	find = async ({ params }, res) => {
+		const { id } = params
+		try {
+			return res.status(200).json(await this.get(id))
+		} catch (err) {
+			console.error(err);
+		}
+
+		return res.status(500).json(this.defaultErrorMessage)
 	}
 
 	all = async ({ query }, res) => {
