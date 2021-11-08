@@ -29,7 +29,7 @@ Antique.init({
 	},
 	endDate: {
 		key: 'endDate',
-		type: DataTypes.TIME,
+		type: DataTypes.DATE,
 	},
 	Categoryid: {
 		key: 'Categoryid',
